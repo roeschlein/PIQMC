@@ -1,2 +1,2 @@
 # PIQMC
-Path integral quantum Monte Carlo simulation codes of valence electrons on a lattice interacting via a dynamical scalar gauge field
+Imaginary-time path integral quantum Monte Carlo (PIQMC) simulation of valence electrons on a lattice interacting via a dynamical scalar gauge field
