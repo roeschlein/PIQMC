@@ -1,0 +1,18 @@
+&INPUT_PW2BGW
+prefix = 'pwscf'
+real_or_complex = 2
+wfng_flag = .true.
+wfng_file = 'WFN'
+rhog_flag = .true.
+rhog_file = 'RHO'
+vxcg_flag = .true.
+vxcg_file = 'VXC'
+vxc_flag = .true.
+vxc_file = 'vxc.dat'
+vxc_diag_nmin = 1
+vxc_diag_nmax = 1000
+vxc_offdiag_nmin = 1
+vxc_offdiag_nmax = 1000
+vxc_integral = 'g'
+vxc_zero_rho_core = .true.
+/

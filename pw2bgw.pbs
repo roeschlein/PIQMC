@@ -1,0 +1,25 @@
+#!/bin/bash
+#PBS -q default
+#PBS -N Vxc_ij
+#PBS -j oe
+##change the values as needed
+#PBS -l select=1:mem=150gb:ncpus=32:mpiprocs=32
+#PBS -l walltime=80:00:00
+##replace "x-ccast-prj" below with "x-ccast-prj-[your project group name]"
+#PBS -W group_list=x-ccast-prj-krjevski
+
+module load openmpi/3.1.6-gcc-sxqy
+module load quantum-espresso/6.6-gcc-w4hr
+
+
+##change the input/output filenames as needed
+INPUT=pw2bgw.in
+
+OUTPUT="${INPUT%.in}.out"
+
+cd $PBS_O_WORKDIR
+
+export NUM_PROC=`cat $PBS_NODEFILE | wc -l`
+
+mpirun -np $NUM_PROC -machinefile $PBS_NODEFILE pw2bgw.x -inp $INPUT > $OUTPUT
+
