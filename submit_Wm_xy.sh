@@ -21,14 +21,15 @@ do
 #PBS -N W_${a}
 #PBS -j oe
 #PBS -l nodes=1:ppn=${xstep}
-#PBS -l mem=220gb
-#PBS -l walltime=155:00:00
+#PBS -l mem=50gb
+#PBS -l walltime=00:80:00
 #PBS -W group_list=x-ccast-prj-krjevski
 
 
 cd \$PBS_O_WORKDIR
 module load openmpi
-gfortran -fopenmp -fdefault-integer-8 W_${a}.f90 -o W_${a}
+module load intel-parallel-studio
+ifort -qopenmp -integer-size 64 W_${a}.f90 -o W_${a}
 chmod +x W_${a}
 export OMP_NUM_THREADS=${xstep}
 

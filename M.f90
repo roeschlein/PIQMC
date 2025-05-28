@@ -26,8 +26,8 @@ program inverse_propagator
         ! This allows us to be symmetric about 0
         allocate(fermi_freq(num_fermi_freq))
         do i = 1, num_fermi_freq/2
-                fermi_freq(2*i-1) = (2*i-1)*PI*T !Fermionic Matsubara Frequencies
-                fermi_freq(2*i) = -(2*i-1)*PI*T
+                fermi_freq(2*i-1) = (2*i-1)*PI !Fermionic Matsubara Frequencies
+                fermi_freq(2*i) = -(2*i-1)*PI
         end do
         
             ! Bubble Sort Algorithm Sort the Fermi Mat Freq
